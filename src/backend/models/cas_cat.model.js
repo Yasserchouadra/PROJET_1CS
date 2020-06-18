@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
-const cas_esiSchema = new Schema(
+const cas_catSchema = new Schema(
   {
         
     id : Number,
@@ -10,7 +10,7 @@ const cas_esiSchema = new Schema(
         type : String, 
         required : true
         },
-    prenom = {
+    prenom :{
         type : String, 
         required : true
         },
@@ -53,7 +53,7 @@ const cas_esiSchema = new Schema(
     
   });
 
-const cas_epi = mongoose.model('cas_epi', cas_esiSchema);
+const cas_cat = mongoose.model('cas_cat', cas_catSchema);
 
-module.exports = cas_epi;
+module.exports = cas_cat;
 

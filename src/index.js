@@ -4,7 +4,6 @@ import 'jquery/src/jquery';
 import "bootstrap/dist/css/bootstrap.min.css"
 import 'bootstrap/dist/js/bootstrap.js';
 import "./assets/style.css"
-import AuthentificationForm from './components/authentificationForm';
 
 
 
@@ -16,7 +15,7 @@ class App extends React.Component {
                   return (
                               <div>
                                   
-                                    <AuthentificationForm  />      
+                                     <p> Le Front est vide pour le moment </p>  
                                   
                               </div>
                          );

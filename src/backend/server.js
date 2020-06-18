@@ -19,16 +19,13 @@ app.use(express.json());
                         );
 
   ///////////////////////////////////////importer les Routes 
-const teacherRouter = require('./routes/teacher');
-const studentRouter = require('./routes/student');
-const studentRouter = require('./routes/compte');
-const studentRouter = require('./routes/cas_epi');
-const studentRouter = require('./routes/cas_cat');
+
+const compteRouter = require('./routes/compte');
+const cas_epiRouter = require('./routes/cas_epi');
+const cas_catRouter = require('./routes/cas_cat');
 
   ///////////////////////////////////////lestning to routers 
 
-app.use('/teacher', teacherRouter);
-app.use('/student', studentRouter);
 app.use('/compte', compteRouter);
 app.use('/cas_epi', cas_epiRouter);
 app.use('/cas_cat', cas_catRouter);
