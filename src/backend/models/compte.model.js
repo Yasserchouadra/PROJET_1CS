@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
-
 const Schema = mongoose.Schema;
-const compteSchema = new Schema(
+const compteSchema = new Schema(   //////Schema du compte (etablisement hospitalisé /)
   {
     id : Number,
     nom:{
