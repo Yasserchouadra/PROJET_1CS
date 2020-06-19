@@ -1,19 +1,20 @@
 import React, { Component } from 'react';
+import Footer from './footer';
 import ReactDom from 'react-dom';
-import Home from './home';
+import Home from './Home';
 import axios from 'axios';
 
 class AuthentificationForm extends Component {
             state = { 
-                    my_comptes :[],
+                    comptes :[],
                     email_tapped :" ",
                     password_tapped :" "
                       }
 ///////////////////////////////////////////////////////////////////////////////
         componentDidMount(){
-            axios.get('http://localhost:5000/compte/')
-            .then( comptes => {
-                                    this.setState({ my_comptes : comptes.data })   
+            axios.get('http://localhost:5000/teacher/')
+            .then( teachers => {
+                                    this.setState({ comptes : teachers.data })   
                                 })
             .catch(function (error) { console.log(error);})
         }     

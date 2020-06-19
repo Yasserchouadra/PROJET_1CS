@@ -51,16 +51,16 @@ const cas_catSchema = new Schema(
 
      Date_debut_blessure :   Date,    ///champ 13
      Date_fin_traitment  : Date,  ///champ 14  
-        
-     cas_blesse =  {///champ 15    ///  cas_blesse   cas_mort    cas_cava   : pour les statistiques
+     ////champ 15    ///  cas_blesse   cas_mort    cas_cava   : pour les statistiques
+     cas_blesse : {
       type : Boolean, 
       required : false
       },
-    cas_mort =  { ///champ 16  
+    cas_mort :  { ///champ 16  
           type : Boolean, 
           required : false
           },
-    cas_cava =  {   ///champ 17
+    cas_cava :  {   ///champ 17
               type : Boolean, 
               required : false
               },

@@ -55,16 +55,16 @@ const cas_epiSchema = new Schema(
     Date_fin_traitment  : {
         type : Date, 
         },
-
-     cas_contamine =  {///champ 15 ///cas_contamine cas_mort    cas_cava   : pour les statistiques
+///champ 15 ///cas_contamine cas_mort    cas_cava   : pour les statistiques 
+     cas_contamine : {
       type : Boolean, 
       required : false
       },
-     cas_mort =  { ///champ 16  
+     cas_mort :  { ///champ 16  
           type : Boolean, 
           required : false
           },
-     cas_cava =  {   ///champ 17
+     cas_cava :  {   ///champ 17
               type : Boolean, 
               required : false
               },
