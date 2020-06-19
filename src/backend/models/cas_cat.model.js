@@ -32,7 +32,7 @@ const cas_catSchema = new Schema(
         required : true
         }, 
     nom_catastrophe :{///champ 9
-            type : Date, 
+            type : String, 
             required : true
             }, 
      wilaya : {///champ 10

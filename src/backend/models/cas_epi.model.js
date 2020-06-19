@@ -19,8 +19,8 @@ const cas_epiSchema = new Schema(
             type : Date, 
             required : true
             }, 
-            nom_pendiment :{
-                type : Date, 
+     nom_pendiment :{
+                type : String, 
                 required : true
                 }, 
     lieu_naissance :{

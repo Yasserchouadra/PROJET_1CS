@@ -27,15 +27,23 @@ class Authentification extends Component {
           comptes.map(compte =>{             
           if(compte.mail === email && compte.password === pswd)
           {
-            if (compte.type ==="EP") {
-                console.log("je suis un EP");
-
+            if (compte.Type ==="EP") {
+                console.log("jesuis logini EP");
+                
                 ReactDom.render(<HomeEP my_compte={compte} />,document.getElementById('root'));   
             } 
-            if (compte.type ==="CC") {
-                console.log("je suis un CCC");
+            if (compte.Type ==="CC") {
+                console.log("jesuis logini EP");
+
                 ReactDom.render(<HomeCC my_compte={compte} />,document.getElementById('root'));      
-            }                      
+            }  
+            else{
+                console.log("pas de login ");
+                console.log(compte);
+
+
+
+            }                    
           }
                                })}  ;
 ///////////////////////////////////////////////////////////////////////////////

@@ -27,7 +27,7 @@ router.route('/:id').get((req, res) => {
 router.route('/add').post((req, res) => {
 
       /// attribuer les 16 champs du variables temporelles 
-  const nss = req.body.nss;
+  const NSS = req.body.NSS;
   
   const nom = req.body.nom;
   const prenom = req.body.prenom;
@@ -39,7 +39,7 @@ router.route('/add').post((req, res) => {
   
   const adresse= req.body.adresse;
   const wilaya= req.body.wilaya;
-  const hopital= req.body.nom_etablisement;
+  const hopital= req.body.hopital;
   
   const Situation_actuelle= req.body.Situation_actuelle;
   const Date_debut_blessure= req.body.Date_debut_blessure;
@@ -53,7 +53,7 @@ router.route('/add').post((req, res) => {
             ///// attribuer les valeurs des 16 variables au nouveau cas catastrophique
 
   const newcas_cat= new cas_cat({
-    nss,nom,prenom,
+    NSS,nom,prenom,
     nom_catastrophe,lieu_naissance,date_naissance,
     sexe,adresse,wilaya,
     hopital, Situation_actuelle, 
@@ -73,7 +73,7 @@ router.route('/update/:id').post((req, res) => {
    .then(
         cas => {     ////////modifier le cas
            /// modifier les 16   champs     
-              cas.nss = req.body.nss;
+              cas.NSS = req.body.NSS;
               cas.nom = req.body.nom;
               cas.prenom = req.body.prenom;
 
@@ -85,9 +85,9 @@ router.route('/update/:id').post((req, res) => {
               cas.adresse= req.body.adresse;
               cas.wilaya= req.body.wilaya;
 
-              cas.hopital= req.body.nom_etablisement;
+              cas.hopital= req.body.hopital;
               cas.Situation_actuelle= req.body.Situation_actuelle;
-              cas.Date_debut_blessure= req.body.Date_debut_Contamination;
+              cas.Date_debut_blessure= req.body.Date_debut_blessure;
 
               cas.Date_fin_traitment= req.body.Date_fin_traitment;
 
@@ -105,4 +105,4 @@ router.route('/update/:id').post((req, res) => {
             'Error: find by id est failed  dans le cas catastrophique' + err));
                                           });
 ////////////////////////////////////////////////////////
-module.exports = router;
+module.exports = router; 

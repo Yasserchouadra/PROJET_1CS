@@ -24,7 +24,7 @@ router.route('/:id').get((req, res) => {
 //////////////////////// Ajouter un cas dans le cas d'une epidemie
 router.route('/add').post((req, res) => {
         ///// ajouter les 16 champs a des variables temporelles
-  const nss = req.body.nss;
+  const NSS = req.body.NSS;
   const nom = req.body.nom;
   const prenom = req.body.prenom;
 
@@ -36,7 +36,7 @@ router.route('/add').post((req, res) => {
   const adresse= req.body.adresse;
   const wilaya= req.body.wilaya;
 
-  const hopital= req.body.nom_etablisement;
+  const hopital= req.body.hopital;
   const Situation_actuelle= req.body.Situation_actuelle;
   const Date_debut_Contamination= req.body.Date_debut_Contamination;
 
@@ -47,8 +47,8 @@ router.route('/add').post((req, res) => {
   const cas_cava   = req.body.cas_cava ;
 
                 ///// attribuer les valeurs des 16 variables au nouveau cas EPIDEME
-  const newcas_epi= new compte({
-    nss,   nom,   prenom,
+  const newcas_epi= new cas_epi({
+    NSS,   nom,   prenom,
    
     nom_pendiment,  lieu_naissance,   date_naissance,
    
@@ -68,11 +68,12 @@ router.route('/add').post((req, res) => {
                                         });
 //////////////////////// updater un cas dans le cas d'une epidemie
 router.route('/update/:id').post((req, res) => {
+
     cas_epi.findById(req.params.id)
      .then(
           cas => {     
               ////////modifier le cas  (16 valeurs)  
-                cas.nss = req.body.nss;
+                cas.NSS = req.body.NSS;
                 
                 cas.nom = req.body.nom;
                 cas.prenom = req.body.prenom;
@@ -84,7 +85,7 @@ router.route('/update/:id').post((req, res) => {
                
                 cas.adresse= req.body.adresse;
                 cas.wilaya= req.body.wilaya;
-                cas.hopital= req.body.nom_etablisement;
+                cas.hopital= req.body.hopital;
                 
                 cas.Situation_actuelle= req.body.Situation_actuelle;
                 cas.Date_debut_Contamination= req.body.Date_debut_Contamination;

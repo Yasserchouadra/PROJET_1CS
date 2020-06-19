@@ -12,9 +12,8 @@ const compteSchema = new Schema(   //////Schema du compte (etablisement hospital
         required : true
         },
    Type :{
-            type : String,  // les valeurs  EH ou  CC 
-                             /// pour faire la direction vers la page DASH dans les deux cas
-            required : true
+       type:String,
+   required : true
         },
     mail :{
         type : String, 
