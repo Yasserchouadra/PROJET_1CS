@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const cas_epiSchema = new Schema(
   {
-        
+          /// y a 16 chapms 
     id : Number,
     NSS : Number,
     nom:{
@@ -14,11 +14,15 @@ const cas_epiSchema = new Schema(
         type : String, 
         required : true
         },
-   
+        
     date_naissance :{
             type : Date, 
             required : true
             }, 
+            nom_pendiment :{
+                type : Date, 
+                required : true
+                }, 
     lieu_naissance :{
         type : String, 
         required : true
@@ -46,12 +50,24 @@ const cas_epiSchema = new Schema(
             },
     Date_debut_Contamination : {
         type : Date, 
-        required : Date.now
+        default : Date.now
         },
     Date_fin_traitment  : {
         type : Date, 
-        required : Date.now
         },
+
+     cas_contamine =  {///champ 15 ///cas_contamine cas_mort    cas_cava   : pour les statistiques
+      type : Boolean, 
+      required : false
+      },
+     cas_mort =  { ///champ 16  
+          type : Boolean, 
+          required : false
+          },
+     cas_cava =  {   ///champ 17
+              type : Boolean, 
+              required : false
+              },
 
     
     

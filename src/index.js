@@ -3,11 +3,11 @@ import ReactDom from 'react-dom';
 import 'jquery/src/jquery';
 import "bootstrap/dist/css/bootstrap.min.css"
 import 'bootstrap/dist/js/bootstrap.js';
-import "./assets/style.css"
+import "./assets/style.css"    ////// le CSS du Projet
 
 
 
-class App extends React.Component {
+class App extends React.Component {    /// Home page 
 
     
 

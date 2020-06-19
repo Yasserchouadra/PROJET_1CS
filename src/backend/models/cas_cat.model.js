@@ -4,50 +4,66 @@ const Schema = mongoose.Schema;
 const cas_catSchema = new Schema(
   {
         
-    id : Number,
-    NSS : Number,
-    nom:{
+    id : Number,///champ 1
+    NSS : Number,  ///champ 2
+    nom:{      ///champ 3
         type : String, 
         required : true
         },
-    prenom :{
+    prenom :{///champ 4
         type : String, 
         required : true
         },
-    
-    date_naissance :{
+        
+    date_naissance :{///champ 5
             type : Date, 
             required : true
             }, 
-    lieu_naissance :{
+    lieu_naissance :{///champ 6
         type : String, 
         required : true
         },
-    sexe : {
+    sexe : {///champ 7
         type : String, 
         required : true
         },
-    adresse :{
+    adresse :{///champ 8
         type : String, 
         required : true
         }, 
-     wilaya : {
+    nom_catastrophe :{///champ 9
+            type : Date, 
+            required : true
+            }, 
+     wilaya : {///champ 10
         type : String, 
         required : true
         }, 
-     hopital : {
+     hopital : {///champ 11
         type : String, 
         required : true
         },
 
-     Situation_actuelle : {
+     Situation_actuelle : {///champ 12
             type : String, 
             required : true
             },
-     Date_debut_blessure :    Date,    
-     Date_fin_traitment  : Date, 
-        
 
+     Date_debut_blessure :   Date,    ///champ 13
+     Date_fin_traitment  : Date,  ///champ 14  
+        
+     cas_blesse =  {///champ 15    ///  cas_blesse   cas_mort    cas_cava   : pour les statistiques
+      type : Boolean, 
+      required : false
+      },
+    cas_mort =  { ///champ 16  
+          type : Boolean, 
+          required : false
+          },
+    cas_cava =  {   ///champ 17
+              type : Boolean, 
+              required : false
+              },
     
     
     
