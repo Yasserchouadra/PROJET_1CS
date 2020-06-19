@@ -14,14 +14,16 @@ Pour lancer le projet il faut :
 6_ apres posisionner vous dansle repertoire backend => cd  Projet_1CS/src/backend
 7_ excuter cette commande pour ajouter les bibliotheques du backend  : npm install
 8_ apres verifier que tous les packages sont bien installée ( dependencises)
-9_ excuter dans le repertoire backENd: npm run start   ( cest pour lancer le serveur back)
-
-
-10_ Cette etape est pour lancer le coté frontEnd . ouvrier un 2 eme terminal et Positionner vous dans le repertoire Principale(PROJET_1CS).
-      excuter :                     cd ..
-                                    cd ..
-11_ excuter :        npm start                         (cest pour le serveur du front end )
+9_ excuter dans le repertoire (projet1cs) cette commande : npm install concurrently
+10_placer vous dans le repertoire generale du projet (projet1cs) et excuter cette commande :
+       npm run dev
 
 
 
-**apres verifier que les deux serveurs dans les deux terminales se fonctionnent bien **. 
+**Ps : verifier votre connexion avec MLAB  **. 
+
+
+
+
+
+
