@@ -12,8 +12,8 @@ import HomeEP from  './frontend/HomeEP';
 class App extends React.Component {    /// Home page 
 
        login= event =>{        
-              ReactDom.render(<Authentification />,document.getElementById('root'));  
-              // ReactDom.render(<HomeEP />,document.getElementById('root'));       
+              //ReactDom.render(<Authentification />,document.getElementById('root'));  
+              ReactDom.render(<HomeEP />,document.getElementById('root'));       
                             };
 
       render(){

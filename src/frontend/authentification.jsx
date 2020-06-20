@@ -49,6 +49,7 @@ class Authentification extends Component {
 ///////////////////////////////////////////////////////////////////////////////
             handleChange1 = event => {
                this.setState({ email_tapped: event.currentTarget.value });
+
                                       };
             handleChange2 = event => {
                  this.setState({ password_tapped: event.currentTarget.value });

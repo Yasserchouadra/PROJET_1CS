@@ -36,7 +36,7 @@ class Cas_Epi extends Component {
 
         return  (
          
-  <tr>
+   <tr>
     <td>{this.props.item.NSS}</td>
     <td>{this.props.item.nom}</td>
     <td>{this.props.item.prenom}</td>  
@@ -46,9 +46,7 @@ class Cas_Epi extends Component {
     <td>{this.props.item.nom_pendiment}</td>  
     <td>{this.props.item.wilaya}</td>  
     <td>{this.props.item.hopital}</td>  
-    <td>{this.props.item.Situation_actuelle}</td>  
-
-  
+    <td>{this.props.item.Situation_actuelle}</td>    
    </tr>
         
         );

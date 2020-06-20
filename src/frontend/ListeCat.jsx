@@ -54,7 +54,7 @@ class ListeCat extends Component {
                                               <th scope="col">nom_catastrophe</th>
                                               <th scope="col">wilaya</th>
                                               <th scope="col">hopital</th>
-                                              <th scope="col">Etat</th>
+                                              <th scope="col">Etat actulle</th>
 
                                   
                                       </tr>
@@ -62,7 +62,7 @@ class ListeCat extends Component {
                                 <tbody>
               {
               
-              this.state.Liste_Cat.map(cas => {return <Cas_Cat item={cas} /> } )  }     
+              this.state.Liste_Cat.map(cas => {return <Cas_Cat key={cas} item={cas} /> } )  }     
                                   <tr>
                                           {/* dernière ligne concernant le calcul de la moyenne générale */}
                                       <th><caption>Liste des Cas catastrophique </caption></th>
