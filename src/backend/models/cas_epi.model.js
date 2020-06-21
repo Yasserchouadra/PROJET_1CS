@@ -17,7 +17,7 @@ const cas_epiSchema = new Schema(
         
     date_naissance :{
             type : Date, 
-            required : true
+            default : Date.now
             }, 
      nom_pendiment :{
                 type : String, 
@@ -53,7 +53,9 @@ const cas_epiSchema = new Schema(
         default : Date.now
         },
     Date_fin_traitment  : {
-        type : Date, 
+        type : Date,
+        default : Date.now
+ 
         },
 ///champ 15 ///cas_contamine cas_mort    cas_cava   : pour les statistiques 
      cas_contamine : {

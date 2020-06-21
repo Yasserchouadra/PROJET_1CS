@@ -11,7 +11,8 @@ class ListePendimi extends Component {
     super(props);
     this.state = {
       Liste_Epi: [],
-      serchbar : ""
+      serchbar : "",
+      categorie : " Tous les cas  "
     };
 this.handleChange = this.handleChange.bind(this)
 
@@ -33,7 +34,6 @@ this.handleChange = this.handleChange.bind(this)
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 chercher (){
-
          const list = [...this.state.Liste_Epi];
           const list2=[];
            list.map(
@@ -44,12 +44,13 @@ chercher (){
                         || (cas.wilaya === this.state.serchbar)
                         ||( cas.hopital === this.state.serchbar)
                         ||( cas.sexe === this.state.serchbar)
-  
+                        ||( cas.adresse === this.state.serchbar)
                         ){     list2.push(cas);  }
                       
                     }
                    );
                       this.setState({Liste_Epi : list2})
+
                   }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 handleChange = event => {
@@ -58,6 +59,57 @@ handleChange = event => {
                };
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////                        
 
+afficher_mort= event => {
+    this.setState({categorie : " Mort "});
+  const list = [...this.state.Liste_Epi];
+        const list2=[];
+        list.map(
+        cas =>{
+             if( cas.Situation_actuelle === "mort"){ 
+                   list2.push(cas); 
+               }
+             }
+          );
+             this.setState({Liste_Epi : list2})
+         
+         };
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////                        
+
+afficher_conta= event => {
+  this.setState({categorie : " contaminé "});
+
+  const list = [...this.state.Liste_Epi];
+  const list2=[];
+  list.map(
+  cas =>{
+      if( cas.Situation_actuelle === "contamine"){ 
+             list2.push(cas); 
+         }
+       }
+    );
+       this.setState({Liste_Epi : list2})
+   
+         };
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////                        
+
+afficher_cava= event => {
+  this.setState({categorie : "Gueri "});
+
+  const list = [...this.state.Liste_Epi];
+  const list2=[];
+  list.map(
+  cas =>{
+       if( cas.Situation_actuelle === "gueri"){ 
+             list2.push(cas); 
+         } 
+       }
+    );
+       this.setState({Liste_Epi : list2})
+   
+         };
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
   render() { 
@@ -65,30 +117,31 @@ handleChange = event => {
 
           <div className="container text-center">   
           <div>
-
-
-
-
-                    <div className="container">
+              <div className="container">
                          
                       <div className="row pl-5">
-                          {/*Choix du categorie */}
+                          {/*Choix du categorie 
                           <div class="dropdown">
-                                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <a class="btn btn-secondary dropdown-toggle"  role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                   Categorie
                                 </a>
 
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                  <a class="dropdown-item"  href="#">MORT </a>
-                                  <a class="dropdown-item"  href="#">CONTAMINE</a>
-                                  <a class="dropdown-item"  href="#">cava </a>
+                                  <a class="dropdown-item"   onclick={ this.afficher_mort}  >MORT  </a>
+                                  <a class="dropdown-item"   onclick={ this.afficher_conta}    >CONTAMINE</a>
+                                  <a class="dropdown-item"   onclick={ this.afficher_cava}    >cava </a>
                                 </div>
                             </div>
-
-
-
-
+                            */}
                           {/* Reset list */}
+                          <div>
+                          <h1> La liste des cas epidemique </h1>
+                          </div>
+                          <div>
+                          <h3> {this.state.categorie}</h3>
+
+
+                          </div>
                            <div className="mt-5 ml-auto col-lg-4" id="searchBar2">
                                <button onClick={()=> this.getlist()}  className="btn btn-primary text-uppercase"> Tous La liste </button>
                               </div>
@@ -145,19 +198,13 @@ handleChange = event => {
               
                                     </table>
                   </div>
-           
-    
-                   
-                                              
-                   
+          <div>
+          <button onClick={()=> this.afficher_mort()}  className="btn btn-primary text-uppercase"> mort </button>
+          <button onClick={()=> this.afficher_conta()}  className="btn btn-primary text-uppercase"> contaminé </button>
+          <button onClick={()=> this.afficher_cava()}  className="btn btn-primary text-uppercase"> Guéri  </button>
 
-              
-
-          
-          
-          
-          
-          
+            
+          </div>         
           
           </div>               
           </div>

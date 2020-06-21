@@ -24,48 +24,77 @@ router.route('/:id').get((req, res) => {
 //////////////////////// Ajouter un cas dans le cas d'une epidemie
 router.route('/add').post((req, res) => {
         ///// ajouter les 16 champs a des variables temporelles
-  const NSS = req.body.NSS;
-  const nom = req.body.nom;
-  const prenom = req.body.prenom;
+       
 
-  const nom_pendiment = req.body.nom_pendiment;
-  const lieu_naissance = req.body.lieu_naissance ;
-  const date_naissance= req.body.date_naissance;
+        
+ // const NSS = req.body.newcas_epi.NSS;
+  const nom = req.body.data.nom;
+  const prenom = req.body.data.prenom;
 
-  const sexe= req.body.sexe;
-  const adresse= req.body.adresse;
-  const wilaya= req.body.wilaya;
+  const nom_pendiment = req.body.data.nom_pendiment;
+  const lieu_naissance = req.body.data.lieu_naissance ;
+  //const date_naissance= req.body.newcas_epi.date_naissance;
+ 
+  const sexe= req.body.data.sexe;
+  const adresse= req.body.data.adresse;
+  const wilaya= req.body.data.wilaya;
 
-  const hopital= req.body.hopital;
-  const Situation_actuelle= req.body.Situation_actuelle;
-  const Date_debut_Contamination= req.body.Date_debut_Contamination;
+  const hopital= req.body.data.hopital;
+  const Situation_actuelle= req.body.data.Situation_actuelle;
+  //const Date_debut_Contamination= req.body.newcas_epi.Date_debut_Contamination;
 
-  const Date_fin_traitment= req.body.Date_fin_traitment;
+  //const Date_fin_traitment= req.body.newcas_epi.Date_fin_traitment;
 
-  const cas_contamine =  req.body.cas_contamine;
-  const cas_mort   = req.body.cas_mort;
-  const cas_cava   = req.body.cas_cava ;
+  const cas_contamine =  req.body.data.cas_contamine;
+  const cas_mort   = req.body.data.cas_mort;
+  const cas_cava   = req.body.data.cas_cava ;
+  ///µ********************************************************************************
+  // const nom_pendiment = "aaaa";
+  // const lieu_naissance = "aaaaa";
+  // //const date_naissance= "aaaa";
+ 
+  // const sexe= "hhh";
+  // const adresse= "hhh";
+  // const wilaya= "hhh";
 
+  // const hopital= "hhh";
+  // const Situation_actuelle= "contamine";
+  // //const Date_debut_Contamination= Date.now;
+
+  // //const Date_fin_traitment=Date.now;
+
+  // const cas_contamine =  true;
+  // const cas_mort   = false;
+  // const cas_cava   = false;
+ 
                 ///// attribuer les valeurs des 16 variables au nouveau cas EPIDEME
-  const newcas_epi= new cas_epi({
-    NSS,   nom,   prenom,
+  const newcas_epii= new cas_epi({
+    
+    NSS, 
+      nom,  
+       prenom ,
    
-    nom_pendiment,  lieu_naissance,   date_naissance,
+    nom_pendiment,  lieu_naissance,  
+    // date_naissance,
    
     sexe,   adresse,   wilaya,
     
-    hopital,   Situation_actuelle,   Date_debut_Contamination,
+    hopital,   Situation_actuelle,  
+    //  Date_debut_Contamination,
    
-    Date_fin_traitment,    cas_contamine,      cas_mort,
+    // Date_fin_traitment,   
+     cas_contamine,      cas_mort,
     
     cas_cava
-                  });
-                    ///// sauvgarder l'ajout dans la BDDD
-  newcas_epi.save()
-    .then(() => res.json('nouveau cas_ epidemé added !'))
-    .catch(err => res.status(400).json('Error: failed added cas_epidemé to BDD' + err));
-                                        
-                                        });
+  });
+                                      ///// sauvgarder l'ajout dans la BDDD
+
+               newcas_epii.save()
+                .then(() => res.json('nouveau cas_ epidemé added !'))
+                
+                .catch(err => res.status(400).json('Error: failed added cas_epidemé to BDD' + err));
+                                                    
+                                                    });
 //////////////////////// updater un cas dans le cas d'une epidemie
 router.route('/update/:id').post((req, res) => {
 
