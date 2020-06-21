@@ -80,7 +80,7 @@ ajouter1= event => {
 
             console.log(newcas_epi);
 
-       axios.post('http://localhost:5000/cas_epi/add',{newcas_epi : data})
+       axios.post('http://localhost:5000/cas_epi/add',{newcas_epi })
       .then( res => {
                 console.log("********************************************");              
                 console.log(" j insert un nouveau cas qui a comme infos : \n ");                                            
