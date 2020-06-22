@@ -65,7 +65,7 @@ class HomeEP extends Component {
                                   <div>  <ListePendimi/>  </div> 
                                    </div>
                                   <div className="tab-pane fade " id="ajouter1" role="tabpanel" aria-labelledby="ajouter1-tab"> 
-                                         {/* <div> <Formulaire1/> </div>*/}
+                                         <div> <Formulaire1/> </div>
                                   </div>
 
                                        </div>
@@ -92,7 +92,9 @@ class HomeEP extends Component {
                                   <div>  <ListeCat/>  </div> 
                                    </div>
                                   <div className="tab-pane fade " id="ajouter2" role="tabpanel" aria-labelledby="ajouter1-tab">
-                                    <div>  <Formulaire2/>  </div> 
+                                    <div>  
+                                      <Formulaire2/>  
+                                      </div> 
                                      </div>
 
                                        </div>

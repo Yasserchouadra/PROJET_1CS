@@ -24,45 +24,44 @@ router.route('/:id').get((req, res) => {
                                   });
 
 ///////////////////// Ajouter un cas dans le cas de catastrophe
-router.route('/add').post((req, res) => {
-
+router.route('/add').post((req, res) => {          
       /// attribuer les 16 champs du variables temporelles 
-  const NSS = req.body.NSS;
+  const NSS = req.body.newcas_cat.NSS; 
+  const nom = req.body.newcas_cat.nom;
+  const prenom = req.body.newcas_cat.prenom;
+  const nom_catastrophe = req.body.newcas_cat.nom_catastrophe;
   
-  const nom = req.body.nom;
-  const prenom = req.body.prenom;
-  const nom_catastrophe = req.body.nom_catastrophe;
+  const lieu_naissance = req.body.newcas_cat.lieu_naissance ;
+  const date_naissance= req.body.newcas_cat.date_naissance;
+  const sexe= req.body.newcas_cat.sexe;
   
-  const lieu_naissance = req.body.lieu_naissance ;
-  const date_naissance= req.body.date_naissance;
-  const sexe= req.body.sexe;
+  const adresse= req.body.newcas_cat.adresse;
+  const wilaya= req.body.newcas_cat.wilaya;
+  const hopital= req.body.newcas_cat.hopital;
   
-  const adresse= req.body.adresse;
-  const wilaya= req.body.wilaya;
-  const hopital= req.body.hopital;
+  const Situation_actuelle= req.body.newcas_cat.Situation_actuelle;
+  const Date_debut_blessure= req.body.newcas_cat.Date_debut_blessure;
+  //const Date_fin_traitment= req.body.Date_fin_traitment;
   
-  const Situation_actuelle= req.body.Situation_actuelle;
-  const Date_debut_blessure= req.body.Date_debut_blessure;
-  const Date_fin_traitment= req.body.Date_fin_traitment;
-  
-  const cas_blesse =  req.body.cas_blesse;
-  const cas_mort   = req.body.cas_mort;
-  const cas_cava   = req.body.cas_cava ;
+  const cas_blesse =  req.body.newcas_cat.cas_blesse;
+  const cas_mort   = req.body.newcas_cat.cas_mort;
+  const cas_cava   = req.body.newcas_cat.cas_cava ;
 
 
             ///// attribuer les valeurs des 16 variables au nouveau cas catastrophique
-
-  const newcas_cat= new cas_cat({
+          
+  const newcas_catt= new cas_cat({
     NSS,nom,prenom,
     nom_catastrophe,lieu_naissance,date_naissance,
     sexe,adresse,wilaya,
     hopital, Situation_actuelle, 
     Date_debut_blessure,    /// la date de blussure   du cas
-    Date_fin_traitment,   /// soit date de CAVA ou dat de mort du cas
+    //Date_fin_traitment,   /// soit date de CAVA ou dat de mort du cas
     cas_blesse,cas_mort,cas_cava   ///// controler les statistiques
       });
+
                              ////sauvgarder dans la BDD le nouveau cas ajouter
-    newcas_cat.save()
+    newcas_catt.save()
     .then(() => res.json('nouveau cas_ catastrophique  added !'))
     .catch(err => res.status(400).json(
       'Error: failed added cas_  catastrophique to BDD' + err));

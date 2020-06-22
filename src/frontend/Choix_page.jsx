@@ -42,8 +42,8 @@ activer1 = event => {
                  <h1>  Bienvenu  dans notre application   </h1>
                     <h1> login avec secsess   </h1>
                  <h1> Page de choix entre pendimie et catastrophe   </h1>
-     <button onClick={this.activer1}  className="btn btn-primary text-uppercase"> Dash Pendimie </button>
-     <button onClick={this.activer2}  className="btn btn-primary text-uppercase"> Dash catastrophe  </button>
+      <button onClick={this.activer1}  className="btn btn-primary text-uppercase"> Dash Pendimie </button>
+      <button onClick={this.activer2}  className="btn btn-primary text-uppercase"> Dash catastrophe  </button>
 
                  </div>
                 );
