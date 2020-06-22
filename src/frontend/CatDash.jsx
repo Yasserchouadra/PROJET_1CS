@@ -6,7 +6,7 @@ import HomeEP from './HomeEP';
 
 
 
-class HomeEP2 extends Component {
+class CatDash extends Component {
 
                         Dasher=(event)=>{
                           ReactDom.render(<HomeEP />,document.getElementById('root'));   
@@ -68,4 +68,4 @@ class HomeEP2 extends Component {
           );
     }
 }
-export default HomeEP2;
+export default CatDash;
