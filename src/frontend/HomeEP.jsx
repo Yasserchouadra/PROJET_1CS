@@ -28,6 +28,7 @@ class HomeEP extends Component {
             <div className="col-9">
               <div className="tab-content" id="v-pills-tabContent">
 
+<<<<<<< HEAD
                   <div className="tab-pane fade show active" id="v-pills-pendimi" role="tabpanel" aria-labelledby="v-pills-pendimi-tab">
                       <div>  <ListePendimi  />     </div>    
                                  
@@ -37,6 +38,7 @@ class HomeEP extends Component {
                   <div className="tab-pane fade show" id="v-pills-catastrphe" role="tabpanel" aria-labelledby="v-pills-catastrphe-tab"> 
                     <div> <Formulaire1 /> </div>
                                    
+=======
                   <div className={this.state.P3} id="v-pills-pendimi" role="tabpanel" aria-labelledby="v-pills-pendimi-tab">
                       <h1> Pendeme Dash </h1>
                             <div>
@@ -67,7 +69,7 @@ class HomeEP extends Component {
                     <h1> Catastrophe Dash </h1>
 
                             <div>
-                                       <ul className="nav nav-tabs" id="myTab2" role="tablist">
+                                  <ul className="nav nav-tabs" id="myTab2" role="tablist">
                                               
                                                 <li className="nav-item" role="presentation">
                                                   <a className="nav-link active" id="consulter2-tab" data-toggle="tab" href="#consulter2" role="tab" aria-controls="consulter2" aria-selected="true">Liste </a>
@@ -88,6 +90,7 @@ class HomeEP extends Component {
                                        </div>
 
                             </div>
+>>>>>>> parent of f53ceae... Front partie 6
                   </div>
          
       
