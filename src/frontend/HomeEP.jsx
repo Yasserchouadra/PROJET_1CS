@@ -8,6 +8,31 @@ import ListeCat from './ListeCat';
 
 class HomeEP extends Component {
 
+  /////////////////////////////////////////////////////////////
+              constructor(props) {
+                super(props);
+                this.state = {
+                  P1: "",
+                  P2: "",
+                  P3: "",
+                  P4: "",
+                        
+                };
+              }
+  /////////////////////////////////////////////////////////////
+              componentDidMount(){
+
+                this.setState({ P1: "nav-link "+this.props.act1});
+                this.setState({ P2: "nav-link "+this.props.act2});
+                this.setState({ P3: "tab-pane fade show "+this.props.act1});
+                this.setState({ P4: "tab-pane fade show "+this.props.act2});
+
+                          
+                      }
+
+  /////////////////////////////////////////////////////////////
+
+
   render() { 
         return  (
      
@@ -15,14 +40,14 @@ class HomeEP extends Component {
       <div className="row">
             <div className="col-3">
                 <div className="nav flex-column nav-pills" id="v-pills-EP" role="tablist" aria-orientation="vertical">
-                  <a className="nav-link active" id="v-pills-pendimi-tab" data-toggle="pill" href="#v-pills-pendimi" role="tab" aria-controls="v-pills-pendimi" aria-selected="true">Pendemi </a>
-                  <a className="nav-link" id="v-pills-catastrphe-tab" data-toggle="pill" href="#v-pills-catastrphe" role="tab" aria-controls="v-pills-catastrphe" aria-selected="false">catastrophe</a>
+                  <a className={this.state.P1} id="v-pills-pendimi-tab" data-toggle="pill" href="#v-pills-pendimi" role="tab" aria-controls="v-pills-pendimi" aria-selected="true">Pendemi </a>
+                  <a className={this.state.P2} id="v-pills-catastrphe-tab" data-toggle="pill" href="#v-pills-catastrphe" role="tab" aria-controls="v-pills-catastrphe" aria-selected="false">catastrophe</a>
                 </div>
             </div>
             <div className="col-9">
               <div className="tab-content" id="v-pills-tabContent">
 
-                  <div className="tab-pane fade show active" id="v-pills-pendimi" role="tabpanel" aria-labelledby="v-pills-pendimi-tab">
+                  <div className={this.state.P3} id="v-pills-pendimi" role="tabpanel" aria-labelledby="v-pills-pendimi-tab">
                       <h1> Pendeme Dash </h1>
                             <div>
                                   <ul className="nav nav-tabs" id="myTab1" role="tablist">
@@ -48,7 +73,7 @@ class HomeEP extends Component {
                                </div>
                   </div> 
 
-                  <div className="tab-pane fade" id="v-pills-catastrphe" role="tabpanel" aria-labelledby="v-pills-catastrphe-tab"> 
+                  <div className={this.state.P4} id="v-pills-catastrphe" role="tabpanel" aria-labelledby="v-pills-catastrphe-tab"> 
                     <h1> Catastrophe Dash </h1>
 
                             <div>

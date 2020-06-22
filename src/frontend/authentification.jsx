@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 import ReactDom from 'react-dom';
-import HomeEP from './HomeEP';
-import HomeCC from './HomeCC';
-
 import axios from 'axios';
+import Choix_page from './Choix_page';
+
+
+
+
+
+
 
 class Authentification extends Component {
             state = { 
@@ -28,22 +32,13 @@ class Authentification extends Component {
           if(compte.mail === email && compte.password === pswd)
           {
             if (compte.Type ==="EP") {
-                console.log("jesuis logini EP");
                 
-                ReactDom.render(<HomeEP my_compte={compte} />,document.getElementById('root'));   
+                ReactDom.render(<Choix_page my_compte={compte} />,document.getElementById('root'));   
             } 
-            if (compte.Type ==="CC") {
-                console.log("jesuis logini EP");
-
-                ReactDom.render(<HomeCC my_compte={compte} />,document.getElementById('root'));      
-            }  
+              
             else{
                 console.log("pas de login ");
-                console.log(compte);
-
-
-
-            }                    
+               }                    
           }
                                })}  ;
 ///////////////////////////////////////////////////////////////////////////////
