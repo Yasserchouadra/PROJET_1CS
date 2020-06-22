@@ -147,14 +147,10 @@ afficher_disparu= event => {
                          
                           {/* Reset list */}
                           <div>
-                          <h1> La liste des cas Catastrophique </h1>
+                          <h1> La liste des cas Catastrophique :{this.state.categorie} </h1>
                           <br/>
                           </div>
-                          <div>
-                          <h3> {this.state.categorie}</h3>
-
-
-                          </div>
+                          
                            <div className="mt-5 ml-auto col-lg-4" id="searchBar2">
                                <button onClick={()=> this.getlist()}  className="btn btn-primary text-uppercase"> Tous La liste </button>
                               </div>

@@ -28,7 +28,7 @@ class Cas_Cat extends Component {
             hopital : this.props.item.hopital,
             Situation_actuelle :this.props.item.Situation_actuelle  
 
-        })  } 
+        })  }  
       
        /////////////////////////////////////////// ///////////////////////////////////////////
          

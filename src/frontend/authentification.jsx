@@ -63,10 +63,9 @@ class Authentification extends Component {
                                   </div>  
                                     
              <div className="container text-center"> 
-<input   onChange={this.handleChange1} type="email" className="form-control" id="emailInput" placeholder="Adresse mail"></input>
-<input  onChange={this.handleChange2} type="password" className="form-control" id="passwordInput" placeholder="Password"></input>
-                          
-<button onClick={this.handleSubmit} type="submit" className="btn btn-primary text-uppercase"> Se connecter </button>
+            <input   onChange={this.handleChange1} type="email" className="form-control" id="emailInput" placeholder="Adresse mail"></input>
+            <input  onChange={this.handleChange2} type="password" className="form-control" id="passwordInput" placeholder="Password"></input>                 
+            <button onClick={this.handleSubmit} type="submit" className="btn btn-primary text-uppercase"> Se connecter </button>
                                       </div>
                                    
                                   </div>                                   
