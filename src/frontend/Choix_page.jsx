@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import HomeEP from './HomeEP';
 import CatDash from './CatDash';
 import ReactDom from 'react-dom';
-
+import {Router,Route,BrowserRouter } from 'react-router-dom';
 
 
 
@@ -28,6 +28,7 @@ activer1 = event => {
     ///////////////////////////////////////////////////////////
   render() { 
         return  (
+
                <div className="container text-center">   
                  <h1>  Bienvenu  dans notre application   </h1>
                     <h1> login avec secsess   </h1>

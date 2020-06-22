@@ -7,7 +7,7 @@ import Choix_page from './Choix_page';
   
 
 
-
+ 
 
 class Authentification extends Component {
             
@@ -16,7 +16,7 @@ class Authentification extends Component {
                     email_tapped :" ",
                     password_tapped :" "
                       }
-///////////////////     sss ////////////////////////////////////////////////////////////
+///////////////////  ////////////////////////////////////////////////////////////
         componentDidMount(){
             axios.get('http://localhost:5000/compte/')
             .then( comptes => {
@@ -38,7 +38,7 @@ class Authentification extends Component {
             } 
               
             else{
-                console.log("pas de login ");
+                console.log("pas de login "); 
                }                    
           }
                                })}  ;
