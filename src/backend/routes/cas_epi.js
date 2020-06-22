@@ -1,6 +1,13 @@
 const router = require('express').Router();
 <<<<<<< HEAD
+<<<<<<< HEAD
 const express =require('express');
+=======
+const cors = require('cors');
+const bodyParser = require("body-parser")
+
+
+>>>>>>> parent of 1882e23... Front Partie 6 : REUNION UPDATED
 
 
 =======
@@ -30,7 +37,14 @@ router.route('/:id').get((req, res) => {
 //////////////////////// Ajouter un cas dans le cas d'une epidemie
 router.route('/add').post((req, res) => {
 <<<<<<< HEAD
+<<<<<<< HEAD
         ///// ajouter les 16 champs a des variables temporelles      
+=======
+        ///// ajouter les 16 champs a des variables temporelles
+        
+
+        
+>>>>>>> parent of 1882e23... Front Partie 6 : REUNION UPDATED
   const NSS = req.body.newcas_epi.NSS;
   const nom = req.body.newcas_epi.nom;
   const prenom = req.body.newcas_epi.prenom;
@@ -103,9 +117,9 @@ router.route('/add').post((req, res) => {
                                       ///// sauvgarder l'ajout dans la BDDD
 
                newcas_epii.save()
-                .then( )
-                .catch(err => res.status(400).json('Error: failed added cas_epidemé to BDD' + err));
+                .then(() => res.json('nouveau cas_ epidemé added !'))
                 
+                .catch(err => res.status(400).json('Error: failed added cas_epidemé to BDD' + err));
                                                     
                                                     });
 //////////////////////// updater un cas dans le cas d'une epidemie
