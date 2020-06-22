@@ -2,15 +2,11 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import ReactDom from 'react-dom';
 import HomeEP from './HomeEP';
-<<<<<<< HEAD
 
 <<<<<<< HEAD
 =======
 
 >>>>>>> parent of f53ceae... Front partie 6
-=======
-import {Router, Route,Link} from "react-router";
->>>>>>> parent of 1882e23... Front Partie 6 : REUNION UPDATED
 
 
 
@@ -22,8 +18,7 @@ class Formualaire1 extends Component {
       this.state = {
          NSS: 0,
          nom :"",
-         prenom :"",
-         
+         prenom :"",    
          nom_pendiment :"",
          lieu_naissance :"",
          //date de naissance apres je vais la faire 
@@ -90,7 +85,7 @@ ajouter1= event => {
 <<<<<<< HEAD
                   axios.post("http://localhost:5000/cas_epi/add",{newcas_epi })
                          .then( res => {
-                                  // ReactDom.render(<HomeEP  />,document.getElementById('root'));                                  
+                                 ReactDom.render(<HomeEP  />,document.getElementById('form'));                                  
                                    })
                         .catch(function (error) { console.log(error); })
 =======
@@ -112,7 +107,6 @@ ajouter1= event => {
 
 }
 <<<<<<< HEAD
-<<<<<<< HEAD
                                
 =======
       
@@ -124,11 +118,6 @@ ajouter1= event => {
   
                           
 >>>>>>> parent of f53ceae... Front partie 6
-=======
-      
-////////////////////////////////////// 
-                         
->>>>>>> parent of 1882e23... Front Partie 6 : REUNION UPDATED
    ////////////////////////////////////////////////////////
   render() { 
  
@@ -137,7 +126,6 @@ ajouter1= event => {
 <<<<<<< HEAD
 
         <div>
-<<<<<<< HEAD
       <div >  
         <h1> Formulaire ajout d'un cas pendemie   </h1>   
 =======
@@ -146,16 +134,6 @@ ajouter1= event => {
 
     
 >>>>>>> parent of f53ceae... Front partie 6
-=======
-                
-
-
-     <div >  
-        <h1> Formulaire ajout d'un cas pendemie   </h1>
-
-                                
-          
->>>>>>> parent of 1882e23... Front Partie 6 : REUNION UPDATED
         <div>
                 <br/>
                 <div class="container">
@@ -193,7 +171,7 @@ ajouter1= event => {
                         </div>
                         <br/>
                         <div style={{width: '30%'}} className="form-group9">
-                                <input  type="text" className="form-control9" name="nom_pendiment" value={this.state.nom_pendiment}  onChange={this.changer}  placeholder="nom_pendiment"/>
+                                 <input  type="text" className="form-control9" name="nom_pendiment" value={this.state.nom_pendiment}  onChange={this.changer}  placeholder="nom_pendiment"/>
                         </div>
                         <br/>
                         <div style={{width: '30%'}} className="form-group10">
@@ -202,28 +180,17 @@ ajouter1= event => {
                         <br/>
 
 <<<<<<< HEAD
-<<<<<<< HEAD
                          <div style={{width: '30%'}}>
                             <button class="btn btn-success" type="submit"> ajouter   </button>
 =======
 
 
-=======
-
- 
->>>>>>> parent of 1882e23... Front Partie 6 : REUNION UPDATED
 
 
 
                         <div style={{width: '30%'}}>
-<<<<<<< HEAD
                             <button class="btn btn-success" type="submit">Ajouter Cas</button>
 >>>>>>> parent of f53ceae... Front partie 6
-=======
-                            <button class="btn btn-success" type="submit">  ok
-        { /* <link to={"HomeEP"}>Ajouter Cas</link> */}
-                                    </button>
->>>>>>> parent of 1882e23... Front Partie 6 : REUNION UPDATED
                         </div> 
                     </form>
                 </div>

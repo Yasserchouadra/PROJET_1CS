@@ -22,8 +22,7 @@ this.handleChange = this.handleChange.bind(this)
                axios.get('http://localhost:5000/cas_epi/')
                             .then( cas_epis => {
                              this.setState({ Liste_Epi : cas_epis.data})   
-                              
-                           })
+                             })
                              .catch(function (error) { console.log(error); })
           }
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -120,28 +119,12 @@ afficher_cava= event => {
               <div className="container">
                          
                       <div className="row pl-5">
-                          {/*Choix du categorie 
-                          <div class="dropdown">
-                                <a class="btn btn-secondary dropdown-toggle"  role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  Categorie
-                                </a>
-
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                  <a class="dropdown-item"   onclick={ this.afficher_mort}  >MORT  </a>
-                                  <a class="dropdown-item"   onclick={ this.afficher_conta}    >CONTAMINE</a>
-                                  <a class="dropdown-item"   onclick={ this.afficher_cava}    >cava </a>
-                                </div>
-                            </div>
-                            */}
+                          
                           {/* Reset list */}
                           <div>
-                          <h1> La liste des cas epidemique </h1>
+                          <h1> La liste des cas epidemique : {this.state.categorie}</h1>
                           </div>
-                          <div>
-                          <h3> {this.state.categorie}</h3>
-
-
-                          </div>
+                          
                            <div className="mt-5 ml-auto col-lg-4" id="searchBar2">
                                <button onClick={()=> this.getlist()}  className="btn btn-primary text-uppercase"> Tous La liste </button>
                               </div>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import HomeEP from './HomeEP';
+import CatDash from './CatDash';
 import ReactDom from 'react-dom';
 
 
@@ -11,19 +12,9 @@ import ReactDom from 'react-dom';
 
 
 class Choix_page extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-
-      active_pendimie: "",
-        active_catastrophe : ""
-      
-    };
-  }
-////////////////////////////////////////////////////////////::
+  
 activer1 = event => {  
-  this.state.active_pendimie  = "active";
-  ReactDom.render(<HomeEP act1={this.state.active_pendimie} act2={this.state.active_catastrophe} />,document.getElementById('root'));   
+  ReactDom.render(<HomeEP  />,document.getElementById('root'));   
 
                          };
 
@@ -31,8 +22,7 @@ activer1 = event => {
   ///////////////////////////////////////////////////////////
 
   activer2 = event => {
-    this.state.active_catastrophe  = "active";
-  ReactDom.render(<HomeEP act1={this.state.active_pendimie} act2={this.state.active_catastrophe} />,document.getElementById('root'));   
+  ReactDom.render(<CatDash />,document.getElementById('root'));   
 
                          };
     ///////////////////////////////////////////////////////////
@@ -45,16 +35,12 @@ activer1 = event => {
 <<<<<<< HEAD
       <button onClick={this.activer1}  className="btn btn-primary text-uppercase"> Dash Pendimie </button>
       <button onClick={this.activer2}  className="btn btn-primary text-uppercase"> Dash catastrophe  </button>
-<<<<<<< HEAD
  
 =======
      <button onClick={this.activer1}  className="btn btn-primary text-uppercase"> Dash Pendimie </button>
      <button onClick={this.activer2}  className="btn btn-primary text-uppercase"> Dash catastrophe  </button>
 
 >>>>>>> parent of f53ceae... Front partie 6
-=======
-
->>>>>>> parent of 1882e23... Front Partie 6 : REUNION UPDATED
                  </div>
                 );
     }
