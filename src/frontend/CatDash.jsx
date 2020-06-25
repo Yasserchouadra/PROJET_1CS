@@ -10,6 +10,7 @@ import { Router } from 'express';
 class CatDash extends Component {                    
  
 
+<<<<<<< HEAD
   state={
     compte : null
   } 
@@ -33,6 +34,9 @@ class CatDash extends Component {
 
 
                           };
+=======
+class HomeEP2 extends Component {
+>>>>>>> parent of d92fc55... version 9
 
 
 
@@ -87,4 +91,4 @@ class CatDash extends Component {
             );
     }
 }
-export default CatDash;
+export default HomeEP2;

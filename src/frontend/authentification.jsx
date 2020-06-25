@@ -5,19 +5,18 @@ import Choix_page from './Choix_page';
 import { BrowserRouter as Router ,Link } from 'react-router-dom';
 
 
-  
+
 
 
 
 
 class Authentification extends Component {
-            
-                  state = { 
+            state = { 
                     my_comptes :[],
                     email_tapped :" ",
                     password_tapped :" ",
                       }
-///////////////////     sss ////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
         componentDidMount(){
                  axios.get('http://localhost:5000/compte/')
                              .then( comptes => {
