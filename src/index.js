@@ -19,6 +19,7 @@ import Formulaire2 from './frontend/Formulaire2';
 
  
  
+<<<<<<< HEAD
 class App extends React.Component {
 
     
@@ -50,3 +51,8 @@ class App extends React.Component {
 const rootElement = document.getElementById("root");
   ReactDom.render(<App />, rootElement);
  
+=======
+ 
+  const rootElement = document.getElementById("root");
+  ReactDom.render(<Authentification />, rootElement);
+>>>>>>> parent of f53ceae... Front partie 6

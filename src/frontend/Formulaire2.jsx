@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+<<<<<<< HEAD
 import axios from 'axios';
 import ReactDom from 'react-dom';
 import EpiDash from './EpiDash';
@@ -89,10 +90,14 @@ ajouter1= event => {
 }
                         
    ////////////////////////////////////////////////////////
+=======
+
+class Formualaire2 extends Component {
+
+>>>>>>> parent of f53ceae... Front partie 6
   render() { 
- 
-      
         return  (
+<<<<<<< HEAD
 
 
               <div>              
@@ -197,6 +202,39 @@ ajouter1= event => {
 </div>
 
      );
+=======
+          <div>
+
+
+         
+<div className="container text-center">   
+<h1> Formulaire ajout d'un cas catastrophe   </h1>
+<div >   
+     <form >
+     <input    type="email" className="form-control" id="emailInput" placeholder="NOM"></input>
+     <input    type="email" className="form-control" id="emailInput1" placeholder="PRENOM "></input>
+     <input    type="email" className="form-control" id="emailInput2" placeholder="SEXE "></input>
+     <input    type="email" className="form-control" id="emailInput3" placeholder="ADRESSE "></input>
+     <input    type="email" className="form-control" id="emailInput4" placeholder="HOPITAL "></input>
+     <input    type="email" className="form-control" id="emailInput5" placeholder="WILLAYA "></input>
+     <input    type="email" className="form-control" id="emailInput6" placeholder="SITUATION ACTUELLE "></input>
+     <input    type="email" className="form-control" id="emailInput7" placeholder="DATE NAISSANCE "></input>
+     <input    type="email" className="form-control" id="emailInput8" placeholder="NOM PENDIME "></input>
+     <input    type="email" className="form-control" id="emailInput9" placeholder="lieu_naissance "></input>
+     <input    type="email" className="form-control" id="emailInput10" placeholder="Adresse "></input>
+     <input    type="email" className="form-control" id="emailInput11" placeholder="Adresse "></input>
+     <input    type="email" className="form-control" id="emailInput12" placeholder="Adresse "></input>
+     <input    type="email" className="form-control" id="emailInput13" placeholder="Adresse "></input>
+                          
+        <button type="submit" className="btn btn-primary">Submit</button>
+    </form>
+  </div>
+           
+</div>
+                
+</div>     
+                );
+>>>>>>> parent of f53ceae... Front partie 6
     }
 }
 export default Formualaire2;

@@ -26,8 +26,18 @@ dasher1 = event => {
 
     
   render() { 
+<<<<<<< HEAD
         return  ( 
                 <Router>
+=======
+        return  (
+               <div className="container text-center">   
+                 <h1>  Bienvenu  dans notre application   </h1>
+                    <h1> login avec secsess   </h1>
+                 <h1> Page de choix entre pendimie et catastrophe   </h1>
+     <button onClick={this.activer1}  className="btn btn-primary text-uppercase"> Dash Pendimie </button>
+     <button onClick={this.activer2}  className="btn btn-primary text-uppercase"> Dash catastrophe  </button>
+>>>>>>> parent of f53ceae... Front partie 6
 
                <div className="container text-center">   
                  <h1>  Bienvenu {this.props.my_compte.prenom}  {this.props.my_compte.nom} dans notre application   </h1>
