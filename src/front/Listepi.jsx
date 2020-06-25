@@ -13,9 +13,9 @@ class Listepi extends React.Component {
     this.state = {
           Liste_Epi: [],
           serchbar : "",
-          categorie : " Tous les cas  ",
-
-    };
+           wilaya : "Blida" ,
+          hopital : "Frantz Fanon",
+     };
     this.handleChange = this.handleChange.bind(this);
  
   }
@@ -28,7 +28,7 @@ class Listepi extends React.Component {
                axios.get('http://localhost:5000/cas_epi/')
                             .then( cas_epis => {
                                cas_epis.data.map(cas=>{
-                                      if ( cas.hopital === this.props.my_compte.nom_etablisement) {
+                                      if ( cas.hopital === "Frantz Fanon") {
                                                
                                             list.push(cas)
                                          };
@@ -133,7 +133,7 @@ render(){
 
     return(
               <div>
-                 <h1> List epidimique du {this.props.my_compte.nom_etablisement}</h1>
+                 <h1> List epidimique du {this.state.hopital}</h1>
 
                  <div className="container text-center">   
           <div>
@@ -143,7 +143,8 @@ render(){
                           
                           {/* Reset list */}
                           <div>
-                          <h1> La liste des cas epidemique : {this.state.categorie}</h1>
+                          <h1> La liste des cas epidemique : </h1>
+
                           </div>
                           
                            <div className="mt-5 ml-auto col-lg-4" id="searchBar2">

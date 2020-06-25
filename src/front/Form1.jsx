@@ -20,8 +20,8 @@ class Form1 extends React.Component {
        Date_debut_Contamination :"",
        sexe :"",
        adresse :"",
-       wilaya :"",
-       hopital:"",
+       wilaya : "Blida" ,
+       hopital : "Frantz Fanon",
        Situation_actuelle  :"",
        cas_contamine : false,
        cas_mort : false ,
@@ -54,8 +54,8 @@ changer = (event) => {
      adresse : this.state.adresse ,
      Date_debut_Contamination : this.state.date_naissance.Date_debut_Contamination,                          
     
-     wilaya : this.props.my_compte.wilaya ,
-     hopital : this.props.my_compte.nom_etablisement,
+     wilaya : this.state.wilaya ,
+     hopital : this.state.hopital,
      Situation_actuelle : this.state.Situation_actuelle ,
      
      cas_contamine : false,
@@ -95,7 +95,7 @@ changer = (event) => {
 
     return(
               <div>
-                 <h1>  Formumaire d'ajout du epidimique du {this.props.my_compte.nom_etablisement}</h1>
+                 <h1>  Formumaire d'ajout du epidimique du {this.state.hopital}</h1>
                  <div>
          <div >  
         <div>

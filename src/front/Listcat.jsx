@@ -13,8 +13,8 @@ class Listcat extends React.Component {
     this.state = {
             Liste_Cat: [],
             serchbar : "",
-            categorie : " Tous les cas  ",
-
+            wilaya : "Blida" ,
+            hopital : "Frantz Fanon",
           };
           this.handleChange = this.handleChange.bind(this);
 
@@ -31,7 +31,7 @@ class Listcat extends React.Component {
                              .then( cas_cats => {
  
                                cas_cats.data.map(cas=>{
-                                if ( cas.hopital === this.props.my_compte.nom_etablisement) {
+                                if ( cas.hopital === "Frantz Fanon" ) {
                                   list.push(cas)
                                     };
                                             });
@@ -141,7 +141,7 @@ afficher_disparu= event => {
 
     return(
               <div>
-                 <h1>  List catastrophique {this.props.my_compte.nom_etablisement}</h1>
+                 <h1>  List catastrophique {this.state.hopital}</h1>
                  
           <div className="container text-center">   
           <div>
@@ -156,7 +156,7 @@ afficher_disparu= event => {
                           </div>
                           
                            <div className="mt-5 ml-auto col-lg-4" id="searchBar2">
-                               <button onClick={()=> this.getlist().bind(this)}  className="btn btn-primary text-uppercase"> Tous La liste </button>
+                               <button onClick={ this.getlist()}  className="btn btn-primary text-uppercase"> Tous La liste </button>
                               </div>
                           {/* Barre de recherche */}
                               <div className="mt-5 ml-auto col-lg-4" id="searchBar2">

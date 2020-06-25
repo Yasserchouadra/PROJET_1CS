@@ -16,24 +16,21 @@ class EpiD extends React.Component {
   constructor(props) {
     super(props); 
     this.state = {
-      compte:{
-        nom :"aaaa",
-        prenom:"aaa",
-        nom_etablisment:"aaaa"
-      }
+    
+        wilaya : "Blida" ,
+        hopital : "Frantz Fanon",
+    
+      
     };
 
   }
-      ///////////////////  ////////////////////////////////////////////////////////////
-      // componentDidMount(){
-      //     this.state.compte =this.props.my_compte;
-      // }   
+       
    //////////////////////////////////////////////////////////////////////////////////
  dasher = event => {
    event.preventDefault();
            // window.location.href = "/Choice/CatD";
 
-            ReactDom.render(<CatD my_compte={this.props.my_compte}  />,document.getElementById('root'));
+            ReactDom.render(<CatD  />,document.getElementById('root'));
                //window.location.replace("/Choice/CatD");
 
 
@@ -54,7 +51,7 @@ class EpiD extends React.Component {
                      </button>
                  </li>
                  <li className="nav-item">
-                   <button className="nav-link "  onClick={this.dasher}    my_compte ={this.props.my_compte}> 
+                   <button className="nav-link "  onClick={this.dasher}   > 
                    <Link  to="/Choice/CatD"  >   Catastrophe Dash    </Link>
                   </button>
                  </li>
@@ -73,13 +70,13 @@ class EpiD extends React.Component {
              <div className="tab-content" id="v-pills-tabContent">
 
                  <div className="tab-pane fade show active" id="v-pills-pendimi" role="tabpanel" aria-labelledby="v-pills-pendimi-tab">
-                     <div>  <Listepi my_compte={this.props.my_compte}  />     </div>    
+                     <div>  <Listepi   />     </div>    
                                 
                                  
                  </div> 
 
                  <div className="tab-pane fade show" id="v-pills-catastrphe" role="tabpanel" aria-labelledby="v-pills-catastrphe-tab"> 
-                   <div> <Form1 my_compte={this.props.my_compte} /> </div>
+                   <div> <Form1  /> </div>
                                   
                  </div>
         

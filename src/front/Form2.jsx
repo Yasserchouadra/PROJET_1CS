@@ -18,11 +18,9 @@ class Form2 extends React.Component {
        
        sexe :"",
        adresse :"",
-       wilaya :"",
-
-       
-       Date_debut_blessure:"",
-       hopital:"",
+       wilaya : "Blida" ,
+       hopital : "Frantz Fanon",
+       Date_debut_blessure:"", 
        Situation_actuelle  :"",
        cas_contamine : false,
        cas_mort : false ,
@@ -55,10 +53,10 @@ ajouter1= event => {
               Date_debut_blessure :this.state.Date_debut_blessure,
               sexe : this.state.sexe ,
               adresse : this.state.adresse ,
-              wilaya : this.props.my_compte.wilaya ,
+              wilaya :"Blida" ,
               
               
-              hopital : this.props.my_compte.nom_etablisement,
+              hopital : "Frantz Fanon",
               Situation_actuelle : this.state.Situation_actuelle ,
               
               cas_contamine : false,
@@ -91,7 +89,7 @@ ajouter1= event => {
 
     return(
               <div>
-                 <h1> formulaire d'ajout du catastrophique du {this.props.my_compte.nom_etablisement}</h1>
+                 <h1> formulaire d'ajout du catastrophique du {this.state.hopital}</h1>
                   <div>              
              <div >  
       <div>

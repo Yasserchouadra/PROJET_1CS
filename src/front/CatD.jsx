@@ -16,12 +16,13 @@ class CatD extends React.Component {
   constructor(props) {
     super(props); 
     this.state = {
-      compte:{
-        nom :"aaaa",
-        prenom:"aaa",
-        nom_etablisment:"aaaa"
-      }
+    
+        wilaya : "Blida" ,
+        hopital : "Frantz Fanon",
+    
+      
     };
+
   }
 ///////////////////  ////////////////////////////////////////////////////////////
       componentDidMount(){
@@ -31,7 +32,7 @@ class CatD extends React.Component {
   dasher = event => {
     event.preventDefault();
     //window.location.href = "/Choice/EpiD";
-      ReactDom.render(<EpiD my_compte={this.props.my_compte} to="/Choice/EpiD" />,document.getElementById('root'));
+      ReactDom.render(<EpiD   />,document.getElementById('root'));
       //window.location.replace("/Choice/EpiD");
 
 
@@ -47,7 +48,7 @@ class CatD extends React.Component {
          <div>
                 <ul className="nav nav-pills nav-fill">
                   <li className="nav-item">
-                  <button className="nav-link "  onClick={this.dasher}   my_compte ={this.props.my_compte}>
+                  <button className="nav-link "  onClick={this.dasher}   >
                   <Link  to="/Choice/EpiD"  >   Pendimie Dash    </Link>
                    </button>
                      
@@ -72,13 +73,13 @@ class CatD extends React.Component {
               <div className="tab-content" id="v-pills-tabContent">
 
                   <div className="tab-pane fade show active" id="v-pills-pendimi" role="tabpanel" aria-labelledby="v-pills-pendimi-tab">
-                      <div>  <Listcat  my_compte={this.props.my_compte} />     </div>    
+                      <div>  <Listcat   />     </div>    
                                  
                                   
                   </div> 
 
                   <div className="tab-pane fade show" id="v-pills-catastrphe" role="tabpanel" aria-labelledby="v-pills-catastrphe-tab"> 
-                    <div> <Form2 my_compte={this.props.my_compte }/> </div>
+                    <div> <Form2 /> </div>
                                    
                   </div>
          
