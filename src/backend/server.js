@@ -1,4 +1,7 @@
+
+
 const express = require('express');
+
 const cors = require('cors');
 const mongoose = require('mongoose');
 
@@ -39,6 +42,9 @@ app.use('/cas_epi', cas_epiRouter);
 app.use('/cas_cat', cas_catRouter);
 
   /////////////////////////////////////// lancer le serveur principale
+ 
+
+
 
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}`);

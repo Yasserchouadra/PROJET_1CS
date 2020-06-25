@@ -19,7 +19,6 @@ import Formulaire2 from './frontend/Formulaire2';
 
  
  
-<<<<<<< HEAD
 class App extends React.Component {
 
     
@@ -27,7 +26,6 @@ class App extends React.Component {
   render(){
              return (
                 <Router >
-                  <h1>je suis yassesr zab lkelbbbb</h1>          
                 <Route path="/" exact component={Authentification} />
                      
                       <Route path="/Choix_page" exact component={Choix_page }  />
@@ -51,8 +49,4 @@ class App extends React.Component {
 
 const rootElement = document.getElementById("root");
   ReactDom.render(<App />, rootElement);
-=======
-  const rootElement = document.getElementById("root");
-  ReactDom.render(<Authentification />, rootElement);
->>>>>>> parent of 0766c93... Partie FrontEnd 8
  

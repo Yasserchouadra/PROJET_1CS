@@ -34,7 +34,7 @@ router.route('/add').post((req, res) => {
   const lieu_naissance = req.body.newcas_cat.lieu_naissance ;
   const date_naissance= req.body.newcas_cat.date_naissance;
   const sexe= req.body.newcas_cat.sexe;
-  
+   
   const adresse= req.body.newcas_cat.adresse;
   const wilaya= req.body.newcas_cat.wilaya;
   const hopital= req.body.newcas_cat.hopital;

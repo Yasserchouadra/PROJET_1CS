@@ -1,13 +1,6 @@
 const router = require('express').Router();
-<<<<<<< HEAD
-const express =require('express');
-
 
 let cas_epi = require('../models/cas_epi.model');
-=======
-<<<<<<< HEAD
-const express =require('express');
->>>>>>> parent of 0766c93... Partie FrontEnd 8
 
 
 
@@ -33,11 +26,8 @@ router.route('/:id').get((req, res) => {
                                   });
 //////////////////////// Ajouter un cas dans le cas d'une epidemie
 router.route('/add').post((req, res) => {
-<<<<<<< HEAD
 
-=======
-<<<<<<< HEAD
->>>>>>> parent of 0766c93... Partie FrontEnd 8
+
         ///// ajouter les 16 champs a des variables temporelles      
   const NSS = req.body.newcas_epi.NSS;
   const nom = req.body.newcas_epi.nom;
@@ -76,13 +66,10 @@ router.route('/add').post((req, res) => {
                                       ///// sauvgarder l'ajout dans la BDDD
 
                newcas_epii.save()
-<<<<<<< HEAD
                 .then( 
 
                     )
-=======
                 .then( )
->>>>>>> parent of 0766c93... Partie FrontEnd 8
                 .catch(err => res.status(400).json('Error: failed added cas_epidemé to BDD' + err));
                 
                                                     
