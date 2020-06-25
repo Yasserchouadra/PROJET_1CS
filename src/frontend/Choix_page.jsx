@@ -1,8 +1,16 @@
 import React, { Component } from 'react';
 import ReactDom from 'react-dom';
+<<<<<<< HEAD
 import EpiDash from './EpiDash';
 import CatDash from './CatDash';
 import { BrowserRouter as Router ,Link } from 'react-router-dom';
+=======
+
+
+
+
+
+>>>>>>> parent of d6f912d... Version 10
 
 
 
@@ -24,9 +32,13 @@ dasher1 = event => {
 
     ///////////////////////////////////////////////////////////
   render() { 
+<<<<<<< HEAD
         return  ( 
                 <Router>
 
+=======
+        return  (
+>>>>>>> parent of d6f912d... Version 10
                <div className="container text-center">   
                  <h1>  Bienvenu {this.props.my_compte.prenom}  {this.props.my_compte.nom} dans notre application   </h1>
                  <h1>   Le nom d'hopital est : {this.props.my_compte.nom_etablisement}  </h1>
