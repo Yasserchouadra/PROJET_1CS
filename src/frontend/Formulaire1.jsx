@@ -1,7 +1,17 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import ReactDom from 'react-dom';
+<<<<<<< HEAD
 import EpiDash from './EpiDash';
+=======
+import HomeEP from './HomeEP';
+
+<<<<<<< HEAD
+=======
+
+>>>>>>> parent of f53ceae... Front partie 6
+
+>>>>>>> parent of 0766c93... Partie FrontEnd 8
 
 
 
@@ -71,8 +81,12 @@ class Formualaire1 extends Component {
 
                   axios.post("http://localhost:5000/cas_epi/add",{newcas_epi })
                          .then( res => {
+<<<<<<< HEAD
                           // ReactDom.render(<EpiDash  />,document.getElementById('root'));
 
+=======
+                                 ReactDom.render(<HomeEP  />,document.getElementById('form'));                                  
+>>>>>>> parent of 0766c93... Partie FrontEnd 8
                                    })
                         .catch(function (error) { console.log(error); })
   
@@ -80,9 +94,25 @@ class Formualaire1 extends Component {
                                  console.log(error); 
                                          }
 
+<<<<<<< HEAD
 
                                         }
                                
+=======
+}
+<<<<<<< HEAD
+                               
+=======
+      
+////////////////////////////////////// 
+       
+
+
+
+  
+                          
+>>>>>>> parent of f53ceae... Front partie 6
+>>>>>>> parent of 0766c93... Partie FrontEnd 8
    ////////////////////////////////////////////////////////
   render() { 
  
@@ -91,6 +121,15 @@ class Formualaire1 extends Component {
         <div>
       <div >  
         <h1> Formulaire ajout d'un cas pendemie   </h1>   
+<<<<<<< HEAD
+=======
+=======
+     <div >  
+        <h1> Formulaire ajout d'un cas pendemie   </h1>
+
+    
+>>>>>>> parent of f53ceae... Front partie 6
+>>>>>>> parent of 0766c93... Partie FrontEnd 8
         <div>
                 <br/> 
                 <div className="container">
@@ -139,6 +178,7 @@ class Formualaire1 extends Component {
                         </div>
                         <br/>
 
+<<<<<<< HEAD
    
                         
                         
@@ -205,6 +245,22 @@ class Formualaire1 extends Component {
 
 
 
+=======
+<<<<<<< HEAD
+                         <div style={{width: '30%'}}>
+                            <button class="btn btn-success" type="submit"> ajouter   </button>
+=======
+
+
+
+
+
+                        <div style={{width: '30%'}}>
+                            <button class="btn btn-success" type="submit">Ajouter Cas</button>
+>>>>>>> parent of f53ceae... Front partie 6
+                        </div> 
+                    </form>
+>>>>>>> parent of 0766c93... Partie FrontEnd 8
                 </div>
             </div>
      

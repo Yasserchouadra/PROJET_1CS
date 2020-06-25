@@ -28,6 +28,7 @@ this.handleChange = this.handleChange.bind(this);
 
                axios.get('http://localhost:5000/cas_epi/')
                             .then( cas_epis => {
+<<<<<<< HEAD
                                cas_epis.data.map(cas=>{
                                       if ( cas.hopital === this.props.my_compte.nom_etablisement) {
                                                  list.push(cas)
@@ -38,6 +39,10 @@ this.handleChange = this.handleChange.bind(this);
 
                             
                                 })//AXIOS CATCH 
+=======
+                             this.setState({ Liste_Epi : cas_epis.data})   
+                             })
+>>>>>>> parent of 0766c93... Partie FrontEnd 8
                              .catch(function (error) { console.log(error); })
                               
                             }

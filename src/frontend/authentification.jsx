@@ -69,6 +69,7 @@ class Authentification extends Component {
                                       <h1 > SIGN IN </h1>
                                   </div>  
                                     
+<<<<<<< HEAD
                                   <div className="container text-center"> 
             <input   onChange={this.handleChange1} type="email" className="form-control" id="emailInput" placeholder="Adresse mail"></input>
             <input  onChange={this.handleChange2} type="password" className="form-control" id="passwordInput" placeholder="Password"></input>                 
@@ -76,6 +77,12 @@ class Authentification extends Component {
             <button  onClick={this.handleSubmit}  className="btn btn-primary text-uppercase">
             <Link  to="/Choix_page"  >     Se connecter  </Link> 
                  </button>
+=======
+             <div className="container text-center"> 
+            <input   onChange={this.handleChange1} type="email" className="form-control" id="emailInput" placeholder="Adresse mail"></input>
+            <input  onChange={this.handleChange2} type="password" className="form-control" id="passwordInput" placeholder="Password"></input>                 
+            <button onClick={this.handleSubmit} type="submit" className="btn btn-primary text-uppercase"> Se connecter </button>
+>>>>>>> parent of 0766c93... Partie FrontEnd 8
                                       </div>
                                    
                                                                      
