@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import ReactDom from 'react-dom';
-import HomeEP from './HomeEP';
-
-
+import EpiDash from './EpiDash';
 
 
 
@@ -17,8 +15,8 @@ class Formualaire1 extends Component {
          prenom :"",    
          nom_pendiment :"",
          lieu_naissance :"",
-         date_naissance :null,
-         Date_debut_Contamination :null,
+         date_naissance :"",
+         Date_debut_Contamination :"",
          sexe :"",
          adresse :"",
          wilaya :"",
@@ -52,11 +50,11 @@ class Formualaire1 extends Component {
        date_naissance : this.state.date_naissance,       
        sexe : this.state.sexe ,
        adresse : this.state.adresse ,
-       wilaya : this.state.wilaya ,
        
         Date_debut_Contamination : this.state.date_naissance.Date_debut_Contamination,                          
+      // wilaya : this.props.my_compte.wilaya ,
 
-       hopital : this.state.hopital ,
+      // hopital : this.props.my_compte.nom_etablisement,
        Situation_actuelle : this.state.Situation_actuelle ,
        //date de debut de contamination  apres je vais la faire 
        
@@ -73,29 +71,31 @@ class Formualaire1 extends Component {
 
                   axios.post("http://localhost:5000/cas_epi/add",{newcas_epi })
                          .then( res => {
-                                 ReactDom.render(<HomeEP  />,document.getElementById('form'));                                  
+                          // ReactDom.render(<EpiDash  />,document.getElementById('root'));
+
                                    })
                         .catch(function (error) { console.log(error); })
   
                         } catch (error) {
                                  console.log(error); 
                                          }
-}
+
+
+                                        }
                                
    ////////////////////////////////////////////////////////
   render() { 
  
       
         return  (
-
         <div>
       <div >  
         <h1> Formulaire ajout d'un cas pendemie   </h1>   
         <div>
                 <br/> 
-                <div class="container">
-                    <form onSubmit={this.ajouter1}  >
-                        <div style={{width: '30%'}} class="form-group1">
+                <div className="container">
+                    <form   >
+                        <div style={{width: '30%'}} className="form-group1">
                             <input  type="number" className="NSS1" name="NSS" value={this.state.NSS}  onChange={this.changer}  placeholder="NSS"/>
                         </div>
                         <br/>
@@ -115,10 +115,7 @@ class Formualaire1 extends Component {
                                 <input  type="text" className="form-control5" name="adresse" value={this.state.adresse}  onChange={this.changer}  placeholder="adresse"/>
                         </div>
                         <br/>
-                        <div style={{width: '30%'}} className="form-group6">
-                                <input  type="text" className="form-control6" name="wilaya" value={this.state.wilaya}  onChange={this.changer}  placeholder="wilaya"/>
-                        </div>
-                        <br/>
+                        
                         <div style={{width: '30%'}} className="form-group7">
                                 <input  type="text" className="form-control7" name="lieu_naissance" value={this.state.lieu_naissance}  onChange={this.changer}  placeholder="lieu_naissance"/>
                         </div>
@@ -133,10 +130,6 @@ class Formualaire1 extends Component {
                         
                         </div>
                         <br/>
-                        <div style={{width: '30%'}} className="form-group8">
-                                <input  type="text" className="form-control8" name="hopital" value={this.state.hopital}  onChange={this.changer}  placeholder="hopital"/>
-                        </div>
-                        <br/>
                         <div style={{width: '30%'}} className="form-group9">
                                  <input  type="text" className="form-control9" name="nom_pendiment" value={this.state.nom_pendiment}  onChange={this.changer}  placeholder="nom_pendiment"/>
                         </div>
@@ -146,15 +139,80 @@ class Formualaire1 extends Component {
                         </div>
                         <br/>
 
-                         <div style={{width: '30%'}}>
-                            <button class="btn btn-success" type="submit"> ajouter   </button>
-                        </div> 
-                    </form>
+   
+                        
+                        
+
+
+                       
+<button type="button" className="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Ajouter
+</button>
+
+
+<div className="modal fade" id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div className="modal-dialog">
+    <div className="modal-content">
+      <div className="modal-header">
+        <h5 className="modal-title" id="exampleModalLabel"> Confirmation d'ajout</h5>
+        <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div className="modal-body">
+                       vous etes sur  ?
+      </div>
+      <div className="modal-footer">
+        <button type="button" className="btn btn-secondary" data-dismiss="modal">Retour au formulaire</button>
+        <button  onClick={this.ajouter1} type="submit" className="btn btn-primary">
+         
+                Sauvgarder
+           </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 </div>
             </div>
      
        </div>
 </div>
+
+    
+    
      );
     }
 }

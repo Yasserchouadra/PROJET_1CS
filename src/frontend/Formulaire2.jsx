@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import ReactDom from 'react-dom';
-import HomeEP from './HomeEP';
-import {Router, Route,Link} from "react-router";
+import EpiDash from './EpiDash';
 
 
 
@@ -18,14 +17,14 @@ class Formualaire2 extends Component {
          
          nom_catastrophe :"",
          lieu_naissance :"",
-         date_naissance :null,
+         date_naissance :"",
          
          sexe :"",
          adresse :"",
          wilaya :"",
 
          
-         Date_debut_blessure:null,
+         Date_debut_blessure:"",
          hopital:"",
          Situation_actuelle  :"",
          cas_contamine : false,
@@ -59,10 +58,10 @@ ajouter1= event => {
                 Date_debut_blessure :this.state.Date_debut_blessure,
                 sexe : this.state.sexe ,
                 adresse : this.state.adresse ,
-                wilaya : this.state.wilaya ,
+                wilaya : this.props.my_compte.wilaya ,
                 
                 
-                hopital : this.state.hopital ,
+                hopital : this.props.my_compte.nom_etablisement,
                 Situation_actuelle : this.state.Situation_actuelle ,
                 
                 cas_contamine : false,
@@ -80,8 +79,8 @@ ajouter1= event => {
 
                   axios.post("http://localhost:5000/cas_cat/add",{newcas_cat })
                           .then( res => {
-                                  // ReactDom.render(<HomeEP  />,document.getElementById('root'));                                  
-                                   })
+                                 
+                                })
                           .catch(function (error) { console.log(error); })
   
                                       } catch (error) {
@@ -94,14 +93,16 @@ ajouter1= event => {
  
       
         return  (
+
+
               <div>              
              <div >  
         <h1> Formulaire ajout d'un cas catastrophique   </h1>
       <div>
                 <br/> 
-                <div class="container">
-                    <form onSubmit={this.ajouter1}  >
-                        <div style={{width: '30%'}} class="form-group1">
+                <div className="container">
+                    <form   >
+                        <div style={{width: '30%'}} className="form-group1">
                             <input  type="number" className="NSS1" name="NSS" value={this.state.NSS}  onChange={this.changer}  placeholder="NSS"/>
                         </div>
                         <br/>
@@ -121,10 +122,7 @@ ajouter1= event => {
                                 <input  type="text" className="form-control5" name="adresse" value={this.state.adresse}  onChange={this.changer}  placeholder="adresse"/>
                         </div>
                         <br/>
-                        <div style={{width: '30%'}} className="form-group6">
-                                <input  type="text" className="form-control6" name="wilaya" value={this.state.wilaya}  onChange={this.changer}  placeholder="wilaya"/>
-                        </div>
-                        <br/>
+                        
                         <div style={{width: '30%'}} className="form-group7">
                                 <input  type="text" className="form-control7" name="lieu_naissance" value={this.state.lieu_naissance}  onChange={this.changer}  placeholder="lieu_naissance"/>
                         </div>
@@ -138,11 +136,7 @@ ajouter1= event => {
                         <input type="date" max="2025-08-00" min="1940-00-00" name="Date_debut_blessure" value={this.state.Date_debut_blessure}  onChange={this.changer}  ></input>
                         
                         </div>
-                        <br/>
-                        <div style={{width: '30%'}} className="form-group8">
-                                <input  type="text" className="form-control8" name="hopital" value={this.state.hopital}  onChange={this.changer}  placeholder="hopital"/>
-                        </div>
-                        <br/>
+                        <br/>                        
                         <div style={{width: '30%'}} className="form-group9">
                                 <input  type="text" className="form-control9" name="nom_catastrophe" value={this.state.nom_catastrophe}  onChange={this.changer}  placeholder="nom_pendiment"/>
                         </div>
@@ -153,15 +147,55 @@ ajouter1= event => {
                         <br/>
 
 
-                        <div style={{width: '30%'}}>
-                            <button class="btn btn-success" type="submit">  Ajouter      </button>
-                        </div> 
+                       
+
+
+
+                       
+   <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                         Ajouter
+   </button>
+
+
+        <div className="modal fade" id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div className="modal-dialog">
+        <div className="modal-content">
+        <div className="modal-header">
+                <h5 className="modal-title" id="exampleModalLabel"> Confirmation d'ajout</h5>
+                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+        </div>
+        <div className="modal-body">
+                        vous etes sur  ?
+        </div>
+        <div className="modal-footer">
+                <button type="button" className="btn btn-secondary" data-dismiss="modal">Retour au formulaire</button>
+                <button  onClick={this.ajouter1} type="submit" className="btn btn-primary">
+                 Sauvgarder
+                           
+                 </button>
+
+                        
+        </div>
+        </div>
+        </div>
+        </div>
+
+
+
+
+
+ 
+
+                        
                     </form>
                 </div>
             </div>
      
        </div>
 </div>
+
      );
     }
 }

@@ -45,7 +45,6 @@ class Cas_Cat extends Component {
     <td>{this.props.item.lieu_naissance}</td>  
     <td>{this.props.item.nom_catastrophe}</td>  
     <td>{this.props.item.wilaya}</td>  
-    <td>{this.props.item.hopital}</td>  
     <td>{this.props.item.Situation_actuelle}</td>  
 
   

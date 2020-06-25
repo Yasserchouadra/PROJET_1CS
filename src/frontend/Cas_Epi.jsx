@@ -16,7 +16,8 @@ class Cas_Epi extends Component {
             Situation_actuelle : ""  
            }
         /////////////////////////////////////////// ///////////////////////////////////////////
-        componentDidMount(){this.setState({
+        componentDidMount(){
+            this.setState({
             NSS : this.props.item.NSS,
             nom : this.props.item.nom,
             prenom :this.props.item.prenom,
@@ -28,7 +29,8 @@ class Cas_Epi extends Component {
             hopital : this.props.item.hopital,
             Situation_actuelle :this.props.item.Situation_actuelle  
 
-        })  } 
+        }) 
+     } 
       
        /////////////////////////////////////////// ///////////////////////////////////////////
          
@@ -36,19 +38,17 @@ class Cas_Epi extends Component {
 
         return  (
          
-   <tr>
-    <td>{this.props.item.NSS}</td>
-    <td>{this.props.item.nom}</td>
-    <td>{this.props.item.prenom}</td>  
-    <td>{this.props.item.sexe}</td>  
-    <td>{this.props.item.adresse}</td>  
-    <td>{this.props.item.lieu_naissance}</td>  
-    <td>{this.props.item.nom_pendiment}</td>  
-    <td>{this.props.item.wilaya}</td>  
-    <td>{this.props.item.hopital}</td>  
-    <td>{this.props.item.Situation_actuelle}</td>    
-   </tr>
-        
+                <tr>
+                    <td>{this.props.item.NSS}</td>
+                    <td>{this.props.item.nom}</td>
+                    <td>{this.props.item.prenom}</td>  
+                    <td>{this.props.item.sexe}</td>  
+                    <td>{this.props.item.adresse}</td>  
+                    <td>{this.props.item.lieu_naissance}</td>  
+                    <td>{this.props.item.nom_pendiment}</td>  
+                    <td>{this.props.item.Situation_actuelle}</td>    
+                </tr>
+                        
         );
     }
    

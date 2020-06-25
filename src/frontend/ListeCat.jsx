@@ -12,20 +12,35 @@ class ListeCat extends Component {
     this.state = {
       Liste_Cat: [],
       serchbar : "",
-      categorie : " Tous les cas  "
+      categorie : " Tous les cas  ",
     };
-this.handleChange = this.handleChange.bind(this)
+this.handleChange = this.handleChange.bind(this);
 
-  }
+
+   }
+
+
   ///////////////////////////////////////////////////////////////////////////////////////////////////
           getlist(){
-               axios.get('http://localhost:5000/cas_cat/')
-                            .then( cas_cats => {
-                             this.setState({ Liste_Cat : cas_cats.data})   
-                              
-                           })
-                             .catch(function (error) { console.log(error); })
-          }
+                
+                const list=[];
+
+                axios.get('http://localhost:5000/cas_cat/')
+                             .then( cas_cats => {
+ 
+                               cas_cats.data.map(cas=>{
+                                if ( cas.hopital === this.props.my_compte.nom_etablisement) {
+                                  list.push(cas)
+                                    };
+                                            });
+                       
+                          this.setState({ Liste_Cat : list})  ;
+ 
+ 
+                            })
+                              .catch(function (error) { console.log(error); })
+
+  } 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
   componentDidMount(){
@@ -34,7 +49,6 @@ this.handleChange = this.handleChange.bind(this)
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 chercher (){
-  console.log("je cherche et je trouve :   \n");
   
          const list = [...this.state.Liste_Cat];
           const list2=[];
@@ -44,26 +58,12 @@ chercher (){
                         || (cas.prenom === this.state.serchbar)
                         || (cas.nom_catastrophe === this.state.serchbar)
                         || (cas.wilaya === this.state.serchbar)
-                        ||( cas.hopital === this.state.serchbar)
                         ||( cas.sexe === this.state.serchbar)
                         ||( cas.adresse === this.state.serchbar)
                         
-                        ){   
-                          console.log("***********************************");
-                              console.log(cas.NSS);
-                              
-                             console.log(cas.nom);
-                             console.log(cas.prenom);
-                             console.log(cas.nom_catastrophe);
-                             console.log(cas.wilaya);
-                             console.log(cas.hopital);
-                             console.log(cas.sexe);
-                             console.log("***********************************");
-
-
-                             
-                            list2.push(cas); 
-                           }
+                        ){                           
+                            list2.push(cas);
+                          }
                       
                     }
                    );
@@ -152,7 +152,7 @@ afficher_disparu= event => {
                           </div>
                           
                            <div className="mt-5 ml-auto col-lg-4" id="searchBar2">
-                               <button onClick={()=> this.getlist()}  className="btn btn-primary text-uppercase"> Tous La liste </button>
+                               <button onClick={()=> this.getlist().bind(this)}  className="btn btn-primary text-uppercase"> Tous La liste </button>
                               </div>
                           {/* Barre de recherche */}
                               <div className="mt-5 ml-auto col-lg-4" id="searchBar2">
@@ -171,7 +171,6 @@ afficher_disparu= event => {
 
                      <div id="liste_malade" >
                              <table className=" table">
-                               <div className="container">                               
                                        <thead>
                                             <tr>
                                              <th scope="col">NSS</th>
@@ -181,8 +180,6 @@ afficher_disparu= event => {
                                              <th scope="col">adresse</th>
                                              <th scope="col">lieu_naissance</th>
                                              <th scope="col">nom_catastrophe</th>
-                                             <th scope="col">wilaya</th>
-                                             <th scope="col">hopital</th>
                                              <th scope="col">Etat actulle</th>
                                             </tr>
                                       </thead>
@@ -190,7 +187,7 @@ afficher_disparu= event => {
                            {  
                             this.state.Liste_Cat.map(cas => {
                                
-                                return <Cas_Cat key={cas} item={cas} /> 
+                                return <Cas_Cat key={cas.nom} item={cas} /> 
                                 
                                                        } )   
                               
@@ -198,12 +195,12 @@ afficher_disparu= event => {
                            
                                           <tr>
                                                 {/* dernière ligne concernant le calcul de la moyenne générale */}
-                                            <th><caption> Liste des Cas Catastrophique </caption></th>
+                                            <th> Liste des Cas Catastrophique </th>
                                             <td></td>
                                             <td></td>
                                          </tr>
                             </tbody>
-                                  </div>                                
+                                                              
               
                                     </table>
                   </div>

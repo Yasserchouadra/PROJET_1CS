@@ -28,6 +28,7 @@ router.route('/:id').get((req, res) => {
                                   });
 //////////////////////// Ajouter un cas dans le cas d'une epidemie
 router.route('/add').post((req, res) => {
+
         ///// ajouter les 16 champs a des variables temporelles      
   const NSS = req.body.newcas_epi.NSS;
   const nom = req.body.newcas_epi.nom;
@@ -61,12 +62,14 @@ router.route('/add').post((req, res) => {
     hopital,Situation_actuelle,Date_debut_Contamination,
      cas_contamine,cas_mort, cas_cava
          // Date_fin_traitment,   
-
+    
   });
                                       ///// sauvgarder l'ajout dans la BDDD
 
                newcas_epii.save()
-                .then( )
+                .then( 
+
+                    )
                 .catch(err => res.status(400).json('Error: failed added cas_epidemé to BDD' + err));
                 
                                                     

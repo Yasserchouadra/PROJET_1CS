@@ -12,23 +12,39 @@ class ListePendimi extends Component {
     this.state = {
       Liste_Epi: [],
       serchbar : "",
-      categorie : " Tous les cas  "
+      categorie : " Tous les cas  ",
     };
-this.handleChange = this.handleChange.bind(this)
-
+this.handleChange = this.handleChange.bind(this);
+ 
   }
+  
+
+
+          
   ///////////////////////////////////////////////////////////////////////////////////////////////////
           getlist(){
+
+            const list=[];
+
                axios.get('http://localhost:5000/cas_epi/')
                             .then( cas_epis => {
-                             this.setState({ Liste_Epi : cas_epis.data})   
-                             })
+                               cas_epis.data.map(cas=>{
+                                      if ( cas.hopital === this.props.my_compte.nom_etablisement) {
+                                                 list.push(cas)
+                                         };
+                                                 });
+                            
+                               this.setState({ Liste_Epi : list})  ; 
+
+                            
+                                })//AXIOS CATCH 
                              .catch(function (error) { console.log(error); })
-          }
+                              
+                            }
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
   componentDidMount(){
-          this.getlist();
+       this.getlist();
                         }     
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -41,10 +57,11 @@ chercher (){
                         || (cas.prenom === this.state.serchbar)
                         || (cas.nom_pendiment === this.state.serchbar)
                         || (cas.wilaya === this.state.serchbar)
-                        ||( cas.hopital === this.state.serchbar)
                         ||( cas.sexe === this.state.serchbar)
                         ||( cas.adresse === this.state.serchbar)
-                        ){     list2.push(cas);  }
+                        ){    
+                           list2.push(cas);    
+                        }
                       
                     }
                    );
@@ -55,11 +72,13 @@ chercher (){
 handleChange = event => {
         this.setState({ serchbar: event.target.value });
 
-               };
+               }; 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////                        
 
 afficher_mort= event => {
     this.setState({categorie : " Mort "});
+    this.getlist() ;
+
   const list = [...this.state.Liste_Epi];
         const list2=[];
         list.map(
@@ -76,6 +95,7 @@ afficher_mort= event => {
 
 afficher_conta= event => {
   this.setState({categorie : " contaminé "});
+  this.getlist() ;
 
   const list = [...this.state.Liste_Epi];
   const list2=[];
@@ -93,7 +113,7 @@ afficher_conta= event => {
 
 afficher_cava= event => {
   this.setState({categorie : "Gueri "});
-
+     this.getlist() ;
   const list = [...this.state.Liste_Epi];
   const list2=[];
   list.map(
@@ -145,7 +165,6 @@ afficher_cava= event => {
 
                      <div id="liste_malade" >
                              <table className=" table">
-                               <div className="container">                               
                                        <thead>
                                             <tr>
                                              <th scope="col">NSS</th>
@@ -155,8 +174,6 @@ afficher_cava= event => {
                                              <th scope="col">adresse</th>
                                              <th scope="col">lieu_naissance</th>
                                              <th scope="col">nom_Pendemi</th>
-                                             <th scope="col">wilaya</th>
-                                             <th scope="col">hopital</th>
                                              <th scope="col">Etat actulle</th>
                                             </tr>
                                       </thead>
@@ -164,7 +181,7 @@ afficher_cava= event => {
                            {  
                             this.state.Liste_Epi.map(cas => {
                                
-                                return <Cas_Epi key={cas} item={cas} /> 
+                                return <Cas_Epi key={cas.nom} item={cas} /> 
                                 
                                                        } )   
                               
@@ -172,12 +189,11 @@ afficher_cava= event => {
                            
                                           <tr>
                                                 {/* dernière ligne concernant le calcul de la moyenne générale */}
-                                            <th><caption> Liste des Cas pendeme </caption></th>
+                                            <th> Liste des Cas pendeme </th>
                                             <td></td>
                                             <td></td>
                                          </tr>
                             </tbody>
-                                  </div>                                
               
                                     </table>
                   </div>
