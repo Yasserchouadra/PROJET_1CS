@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import ReactDom from 'react-dom';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import EpiDash from './EpiDash';
 import CatDash from './CatDash';
 import { BrowserRouter as Router ,Link } from 'react-router-dom';
 =======
+=======
+>>>>>>> parent of d6f912d... Version 10
 
 
 
@@ -33,9 +36,13 @@ dasher1 = event => {
     ///////////////////////////////////////////////////////////
   render() { 
 <<<<<<< HEAD
+<<<<<<< HEAD
         return  ( 
                 <Router>
 
+=======
+        return  (
+>>>>>>> parent of d6f912d... Version 10
 =======
         return  (
 >>>>>>> parent of d6f912d... Version 10
