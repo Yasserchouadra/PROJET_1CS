@@ -6,6 +6,8 @@ const cas_epiSchema = new Schema(
           /// y a 16 chapms 
     id : Number,
     NSS : Number,
+    NI : Number,  ///champ 2
+
     nom:{
         type : String, 
         required : true

@@ -31,6 +31,7 @@ router.route('/add').post((req, res) => {
 
         ///// ajouter les 16 champs a des variables temporelles      
   const NSS = req.body.newcas_epi.NSS;
+  const NI = req.body.newcas_epi.NI;
   const nom = req.body.newcas_epi.nom;
   const prenom = req.body.newcas_epi.prenom;
 
@@ -56,7 +57,7 @@ router.route('/add').post((req, res) => {
                 ///// attribuer les valeurs des 16 variables au nouveau cas EPIDEME
   const newcas_epii= new cas_epi({
     
-    NSS, nom,prenom ,
+    NSS,NI, nom,prenom ,
     nom_pendiment,lieu_naissance,date_naissance,
     sexe,adresse,wilaya,
     hopital,Situation_actuelle,Date_debut_Contamination,
@@ -82,7 +83,8 @@ router.route('/update/:id').post((req, res) => {
           cas => {     
               ////////modifier le cas  (16 valeurs)  
                 cas.NSS = req.body.NSS;
-                
+                cas.NI = req.body.NI;
+
                 cas.nom = req.body.nom;
                 cas.prenom = req.body.prenom;
                 cas.nom_pendiment =req.body.nom_pendiment;

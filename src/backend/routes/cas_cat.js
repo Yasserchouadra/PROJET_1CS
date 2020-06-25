@@ -27,6 +27,8 @@ router.route('/:id').get((req, res) => {
 router.route('/add').post((req, res) => {          
       /// attribuer les 16 champs du variables temporelles 
   const NSS = req.body.newcas_cat.NSS; 
+  const NI = req.body.newcas_cat.NI; 
+
   const nom = req.body.newcas_cat.nom;
   const prenom = req.body.newcas_cat.prenom;
   const nom_catastrophe = req.body.newcas_cat.nom_catastrophe;
@@ -51,7 +53,7 @@ router.route('/add').post((req, res) => {
             ///// attribuer les valeurs des 16 variables au nouveau cas catastrophique
           
   const newcas_catt= new cas_cat({
-    NSS,nom,prenom,
+    NSS,NI,nom,prenom,
     nom_catastrophe,lieu_naissance,date_naissance,
     sexe,adresse,wilaya,
     hopital, Situation_actuelle, 
@@ -73,6 +75,7 @@ router.route('/update/:id').post((req, res) => {
         cas => {     ////////modifier le cas
            /// modifier les 16   champs     
               cas.NSS = req.body.NSS;
+              cas.NI = req.body.NI;
               cas.nom = req.body.nom;
               cas.prenom = req.body.prenom;
 

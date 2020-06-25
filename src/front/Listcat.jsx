@@ -178,6 +178,7 @@ afficher_disparu= event => {
                                        <thead>
                                             <tr>
                                              <th scope="col">NSS</th>
+                                             <th scope="col">Num Iden</th>
                                              <th scope="col">Nom</th>
                                              <th scope="col">Prénom</th>
                                               <th scope="col">sexe</th>

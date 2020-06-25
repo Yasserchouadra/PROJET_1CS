@@ -3,7 +3,7 @@ import axios from 'axios';
 
  
  
-
+ 
  
 class Form1 extends React.Component {
 
@@ -12,6 +12,7 @@ class Form1 extends React.Component {
     super(props); 
     this.state = {
        NSS: 0,
+       NI: 0,
        nom :"",
        prenom :"",    
        nom_pendiment :"",
@@ -43,6 +44,7 @@ changer = (event) => {
           
   const newcas_epi ={
      NSS  : this.state.NSS ,
+     NI  : this.state.NI ,
      nom : this.state.nom ,
      prenom: this.state.prenom ,
      
@@ -104,6 +106,10 @@ changer = (event) => {
                     <form   >
                         <div style={{width: '30%'}} className="form-group1">
                             <input  type="number" className="NSS1" name="NSS" value={this.state.NSS}  onChange={this.changer}  placeholder="NSS"/>
+                        </div>
+                        <br/>
+                        <div style={{width: '30%'}} className="form-group1">
+                            <input  type="number" className="NI1" name="NI" value={this.state.NI}  onChange={this.changer}  placeholder="Numero Identite"/>
                         </div>
                         <br/>
                         <div style={{width: '30%'}} className="form-group2">

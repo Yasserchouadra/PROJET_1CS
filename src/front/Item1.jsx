@@ -5,6 +5,7 @@ class Item1 extends Component {
     
         state={ 
             NSS : "",
+            NI : "",
             nom : "",
             prenom : "",
             sexe : "",
@@ -40,6 +41,7 @@ class Item1 extends Component {
          
                 <tr>
                     <td>{this.props.item.NSS}</td>
+                    <td>{this.props.item.NI}</td>
                     <td>{this.props.item.nom}</td>
                     <td>{this.props.item.prenom}</td>  
                     <td>{this.props.item.sexe}</td>  

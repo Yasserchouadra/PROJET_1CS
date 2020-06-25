@@ -6,6 +6,8 @@ const cas_catSchema = new Schema(
         
     id : Number,///champ 1
     NSS : Number,  ///champ 2
+    NI : Number,  ///champ 2
+
     nom:{      ///champ 3
         type : String, 
         required : true
